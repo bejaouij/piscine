@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'g9'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -60,7 +60,7 @@ return [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'g9'),
+            'database' => env('DB_DATABASE', 'piscine'),
             'username' => env('DB_USERNAME', 'g9'),
             'password' => env('DB_PASSWORD', 'azqswx59&'),
             'charset' => 'utf8',
