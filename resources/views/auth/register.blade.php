@@ -89,6 +89,18 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4 right">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="is_professional" id="is_professional" {{ old('is_professional') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="is_professional">
+                                        {{ __('I am a professional') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
