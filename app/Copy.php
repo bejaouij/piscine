@@ -5,7 +5,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Shop extends Model
+
+class Copy extends Model
 {
 
     /**
@@ -13,28 +14,21 @@ class Shop extends Model
      *
      * @var string
      */
-    public $table = 'shop';
+    public $table = 'copy';
 
     /**
      * The attributes that contains the table primary key.
      *
      * @var string
      */
-    protected $primaryKey = 'shop_siret';
+    protected $primaryKey = 'copy_id';
 
     /**
      * Indicates if the IDs are auto-incrementing.
      *
      * @var bool
      */
-    public $incrementing = false;
-
-    /**
-     * The "type" of the auto-incrementing ID.
-     *
-     * @var string
-     */
-    protected $keyType = "string";
+    public $incrementing = true;
 
     /**
      * The attributes that informs whether the table contains timestamp fields.
@@ -56,9 +50,6 @@ class Shop extends Model
      * @var array
      */
     protected $casts = [
-        "shop_position_y" => "float",
-        "shop_position_x" => "float",
-        "shop_is_delivery_possible" => "boolean"
+        "copy_stock" => "integer"
     ];
-
 }
