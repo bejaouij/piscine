@@ -15,7 +15,6 @@ class Address extends Model
      */
     public $table = 'address';
 
-
     /**
      * The attributes that contains the table primary key.
      *

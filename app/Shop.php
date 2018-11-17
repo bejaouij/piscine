@@ -5,7 +5,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Shop extends Model
 {
 
     /**
@@ -13,14 +13,21 @@ class Product extends Model
      *
      * @var string
      */
-    public $table = 'product';
+    public $table = 'shop';
 
     /**
      * The attributes that contains the table primary key.
      *
      * @var string
      */
-    protected $primaryKey = 'product_id';
+    protected $primaryKey = 'shop_siret';
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
 
     /**
      * The attributes that informs whether the table contains timestamp fields.
@@ -42,10 +49,9 @@ class Product extends Model
      * @var array
      */
     protected $casts = [
-        "product_price" => "float",
-        "product_discount_percentage" => "float",
-        "product_booking_duration" => "integer"
+        "shop_position_y" => "float",
+        "shop_position_x" => "float",
+        "shop_is_delivery_possible" => "boolean"
     ];
-
 
 }
