@@ -5,7 +5,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Address extends Model
 {
 
     /**
@@ -13,7 +13,7 @@ class Product extends Model
      *
      * @var string
      */
-    public $table = 'product';
+    public $table = 'address';
 
 
     /**
@@ -21,7 +21,7 @@ class Product extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'product_id';
+    protected $primaryKey = 'address_id';
 
     /**
      * The attributes that informs whether the table contains timestamp fields.
@@ -43,10 +43,7 @@ class Product extends Model
      * @var array
      */
     protected $casts = [
-        "product_price" => "float",
-        "product_discount_percentage" => "float",
-        "product_booking_duration" => "integer"
+        "address_street_number" => "integer"
     ];
-
 
 }
