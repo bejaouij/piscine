@@ -18,8 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-<<<<<<< Updated upstream
-=======
 Route::get('/profile', 'Auth\ProfileController@index')->name('profile_form');
 Route::post('/profile', 'Auth\ProfileController@update')->name('profile_update');
->>>>>>> Stashed changes

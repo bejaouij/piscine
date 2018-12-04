@@ -64,8 +64,6 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-<<<<<<< Updated upstream
-=======
 
                                     <a class="dropdown-item" href="{{ route('profile_form') }}"
                                        onclick="event.preventDefault();
@@ -76,7 +74,6 @@
                                     <form id="profile-form" action="{{ route('profile_form') }}" method="GET" style="display: none;">
                                         @csrf
                                     </form>
->>>>>>> Stashed changes
                                 </div>
                             </li>
                         @endguest
