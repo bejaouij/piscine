@@ -21,3 +21,4 @@ Homestead.json
 
 # IDE Phpstorm
 .idea/
+config/database\.php

@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/product/{id}', 'ProductController@show');
+Route::get('/product/{id}', 'ProductController@show')->where('id', '[0-9]+');

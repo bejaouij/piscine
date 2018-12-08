@@ -47,5 +47,12 @@ class Product extends Model
         "product_booking_duration" => "integer"
     ];
 
-
+    /**
+     * Get the price with the discount
+     *
+     * @return int
+     */
+    public function getDiscountedPrice() {
+        return $this->product_price - $this->product_price * ($this->product_discount_percentage / 100);
+    }
 }
