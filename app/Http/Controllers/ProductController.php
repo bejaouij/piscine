@@ -14,7 +14,8 @@ class ProductController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\View\Factory|View
      */
-    public function show(int $id) {
+    public function show(int $id)
+    {
         return view('product.show', ['product' => Product::findOrFail($id)]);
     }
 
@@ -22,7 +23,8 @@ class ProductController extends Controller
      * @param $idShop
      * @return \Illuminate\Contracts\View\Factory|View
      */
-    public function showAllShop(int $idShop) {
+    public function showAllShop(int $idShop)
+    {
         return view('product.all', ['products' => Product::where('shop', $idShop)]);
     }
 
@@ -32,8 +34,9 @@ class ProductController extends Controller
      * @param $id
      * @return View
      */
-    public function update(int $id) {
-        return view('product.update', ['action' => 'update','product' => Product::findOrFail($id)]);
+    public function update(int $id)
+    {
+        return view('product.update', ['action' => 'update', 'product' => Product::findOrFail($id)]);
     }
 
     /**
@@ -41,7 +44,8 @@ class ProductController extends Controller
      *
      * @param $id
      */
-    public function updated(int $id) {
+    public function updated(int $id)
+    {
 
     }
 
@@ -49,7 +53,8 @@ class ProductController extends Controller
      * Show the page to create a new product
      * @return View
      */
-    public function create() {
+    public function create()
+    {
         return view('product.update', ['action' => 'create']);
     }
 
@@ -57,7 +62,8 @@ class ProductController extends Controller
     /**
      * Handle the creation of a new product
      */
-    public function created() {
+    public function created()
+    {
 
     }
 
@@ -66,7 +72,8 @@ class ProductController extends Controller
      *
      * @param $id
      */
-    public function delete(int $id) {
+    public function delete(int $id)
+    {
 
     }
 

@@ -61,4 +61,24 @@ class Shop extends Model
         "shop_is_delivery_possible" => "boolean"
     ];
 
+    /**
+     * Get the address associated to the shop
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function address()
+    {
+        return $this->hasOne('App\Address', 'address_id', 'address_id');
+    }
+
+    /**
+     * Get the product for the shop
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products()
+    {
+        return $this->hasMany('App\Product', 'shop_siret', 'shop_siret');
+    }
+
 }

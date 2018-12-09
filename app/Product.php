@@ -52,7 +52,49 @@ class Product extends Model
      *
      * @return int
      */
-    public function getDiscountedPrice() {
+    public function getDiscountedPrice()
+    {
         return $this->product_price - $this->product_price * ($this->product_discount_percentage / 100);
     }
+
+    /**
+     * Get the shop that owns the product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function shop()
+    {
+        return $this->belongsTo('App\Shop', "shop_siret", 'shop_siret');
+    }
+
+    /**
+     * Get the category associated to the product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Category', 'category_id', 'category_id');
+    }
+
+    /**
+     * Get the photo associated to the product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function photo_path()
+    {
+        return $this->hasOne('App\Photo', 'photo_id', 'photo_id');
+    }
+
+    /**
+     * Get the copies for the product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function copies()
+    {
+        return $this->hasMany('App\Copy', 'product_id', 'product_id');
+    }
 }
+

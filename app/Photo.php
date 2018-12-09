@@ -5,7 +5,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Photo extends Model
 {
 
     /**
@@ -13,14 +13,14 @@ class Category extends Model
      *
      * @var string
      */
-    public $table = 'category';
+    public $table = 'photo';
 
     /**
      * The attributes that contains the table primary key.
      *
      * @var string
      */
-    protected $primaryKey = 'category_id';
+    protected $primaryKey = 'photo_id';
 
     /**
      * The attributes that informs whether the table contains timestamp fields.
@@ -34,16 +34,12 @@ class Category extends Model
      *
      * @var array
      */
-    protected $fillable = ['category_name'];
+    protected $fillable = [''];
 
     /**
-     * Get the products for the category
+     * The attributes that should be cast to native types.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @var array
      */
-    public function products()
-    {
-        return $this->hasMany('App\Product', 'category_id', 'category_id');
-    }
 
 }
