@@ -2,13 +2,11 @@
 
 namespace App;
 
-
 use CoenJacobs\EloquentCompositePrimaryKeys\HasCompositePrimaryKey;
 use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
-
     use HasCompositePrimaryKey;
 
     /**
@@ -16,7 +14,7 @@ class Cart extends Model
      *
      * @var string
      */
-    public $table = 'cart';
+    protected $table = 'cart';
 
     /**
      * The attributes that contains the table primary key.

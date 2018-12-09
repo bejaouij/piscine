@@ -52,13 +52,6 @@ Route::get('/shop/{id}', 'ShopController@show')->where('id', '[0-9]+')->name("sh
  * Lead to the category page with the category_id
  */
 Route::get('/category/{id}', 'CategoryController@show')->where('id', '[0-9]+');
-/**
- * Lead to the basket
- */
-Route::get('/basket', 'CartController@show');
-
-
-
 
 /**
  * For testing purpose
@@ -83,8 +76,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'Auth\ProfileController@index')->name('profile_form');
 Route::post('/profile', 'Auth\ProfileController@update')->name('profile_update');
-
-Route::get('/my-shop/{id}', 'HomeController@shop')->name('my-shop');
-Route::get('/my-shops', 'HomeController@shops')->name('my-shops');
-
-Route::post('/product/create/shop/{id}', 'ProductController@add')->name('product-create');
+Route::post('/cart', 'CartController@index')->name('cart-index');
