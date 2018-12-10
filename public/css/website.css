@@ -1,0 +1,24 @@
+input.cart-quantity {
+	width: 50px;
+	height: 30px;
+	text-align: center;
+}
+
+button.cart-quantity {
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	box-shadow: none;
+	border: solid black 1px;
+	background-color: white;
+}
+
+button.cart-quantity:hover {
+	background-color: lightgrey;
+
+	-webkit-transition: background-color .25s ease;
+	-moz-transition: background-color .25s ease;
+	-ms-transition: background-color .25s ease;
+	-o-transition: background-color .25s ease;
+	transition: background-color .25s ease;
+}
