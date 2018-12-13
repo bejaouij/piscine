@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
 {
-
     /**
      * The attributes that contains the table name.
      *
      * @var string
      */
-    public $table = 'photo';
+    protected $table = 'photo';
 
     /**
      * The attributes that contains the table primary key.

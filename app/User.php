@@ -63,4 +63,8 @@ class User extends Authenticatable
     public function shops() {
         return $this->belongsToMany('App\Shop', 'leading', 'user_id', 'shop_siret');
     }
+
+    public function carts() {
+        return Cart::where('customer_id', $this->user_id)->get();
+    }
 }

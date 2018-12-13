@@ -3,6 +3,8 @@
 namespace App;
 
 use CoenJacobs\EloquentCompositePrimaryKeys\HasCompositePrimaryKey;
+use App\Copy;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
@@ -35,7 +37,7 @@ class Cart extends Model
      *
      * @var bool
      */
-    public $timestamps = false;
+	public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -53,4 +55,7 @@ class Cart extends Model
         "cart_quantity" => "integer"
     ];
 
+    public function copy() {
+        return Copy::find($this->copy_id);
+    }
 }
