@@ -28,3 +28,7 @@ Route::get('/shop/{id}', 'ShopController@show')->where('id', '[0-9]+');
  * Lead to the category page with the category_id
  */
 Route::get('/category/{id}', 'CategoryController@show')->where('id', '[0-9]+');
+/**
+ * Lead to the basket
+ */
+Route::get('/basket', 'BasketController@show');

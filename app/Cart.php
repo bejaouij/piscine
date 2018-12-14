@@ -20,7 +20,7 @@ class Cart extends Model
      *
      * @var string
      */
-    //protected $primaryKey = ['cart_id', 'customer_id'];
+    protected $primaryKey = ['copy_id', 'customer_id'];
 
     /**
      * Indicates if the IDs are auto-incrementing.
@@ -60,10 +60,35 @@ class Cart extends Model
      */
     protected function setKeysForSaveQuery(Builder $query)
     {
-        $query
-            ->where('cart_id', '=', $this->getAttribute('cart_id'))
-            ->where('customer_id', '=', $this->getAttribute('customer_id'));
+        $keys = $this->getKeyName();
+        if(!is_array($keys)){
+            return parent::setKeysForSaveQuery($query);
+        }
+
+        foreach($keys as $keyName){
+            $query->where($keyName, '=', $this->getKeyForSaveQuery($keyName));
+        }
+
         return $query;
+    }
+
+    /**
+     * Get the primary key value for a save query.
+     *
+     * @param mixed $keyName
+     * @return mixed
+     */
+    protected function getKeyForSaveQuery($keyName = null)
+    {
+        if(is_null($keyName)){
+            $keyName = $this->getKeyName();
+        }
+
+        if (isset($this->original[$keyName])) {
+            return $this->original[$keyName];
+        }
+
+        return $this->getAttribute($keyName);
     }
 
 }
