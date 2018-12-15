@@ -4,9 +4,11 @@ namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
+use CoenJacobs\EloquentCompositePrimaryKeys\HasCompositePrimaryKey;
 
 class Review extends Model
 {
+    use HasCompositePrimaryKey;
 
     /**
      * The attributes that contains the table name.
@@ -20,7 +22,7 @@ class Review extends Model
      *
      * @var string
      */
-    protected $primaryKey = ['customer_id', 'product_id'];
+    protected $primaryKey = array('customer_id', 'product_id');
 
     /**
      * The attributes that contains the table primary key.
@@ -67,45 +69,6 @@ class Review extends Model
     public function customer()
     {
         //return $this->hasOne('App\Customer', 'customer_id', 'user_id');
-    }
-
-    /**
-     * Set the keys for a save update query.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    protected function setKeysForSaveQuery(Builder $query)
-    {
-        $keys = $this->getKeyName();
-        if (!is_array($keys)) {
-            return parent::setKeysForSaveQuery($query);
-        }
-
-        foreach ($keys as $keyName) {
-            $query->where($keyName, '=', $this->getKeyForSaveQuery($keyName));
-        }
-
-        return $query;
-    }
-
-    /**
-     * Get the primary key value for a save query.
-     *
-     * @param mixed $keyName
-     * @return mixed
-     */
-    protected function getKeyForSaveQuery($keyName = null)
-    {
-        if (is_null($keyName)) {
-            $keyName = $this->getKeyName();
-        }
-
-        if (isset($this->original[$keyName])) {
-            return $this->original[$keyName];
-        }
-
-        return $this->getAttribute($keyName);
     }
 
 }

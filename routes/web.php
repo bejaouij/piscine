@@ -32,3 +32,15 @@ Route::get('/category/{id}', 'CategoryController@show')->where('id', '[0-9]+');
  * Lead to the basket
  */
 Route::get('/basket', 'BasketController@show');
+
+
+
+
+/**
+ * For testing purpose
+ */
+
+/**
+ * Lead to a review (for testing purpose)
+ */
+Route::get('/review/{customerId}/{productId}', 'ReviewController@show')->where('customerId', '[0-9]+')->where('productId', '[0-9]+');
