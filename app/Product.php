@@ -96,5 +96,10 @@ class Product extends Model
     {
         return $this->hasMany('App\Copy', 'product_id', 'product_id');
     }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Review', 'product_id', 'product_id');
+    }
 }
 

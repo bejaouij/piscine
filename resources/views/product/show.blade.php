@@ -23,6 +23,8 @@
 {{ $product->photo_path->photo_relative_path  }}
 <br>
 {{ dump($product->copies) }}
+<br>
+{{ dump($product->reviews) }}
 </body>
 </html>
 
