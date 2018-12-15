@@ -31,7 +31,7 @@ Route::get('/category/{id}', 'CategoryController@show')->where('id', '[0-9]+');
 /**
  * Lead to the basket
  */
-Route::get('/basket', 'BasketController@show');
+Route::get('/basket', 'CartController@show');
 
 
 

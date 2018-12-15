@@ -52,4 +52,15 @@ class Order extends Model
         "order_discount_fidelity" => "float"
     ];
 
+    /**
+     * Get order lines from the order
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function orderLines() {
+        return $this->hasMany('App\OrderLine', "order_id", "order_id");
+    }
+
+
+
 }

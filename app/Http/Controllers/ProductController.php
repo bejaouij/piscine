@@ -19,13 +19,13 @@ class ProductController extends Controller
         return view('product.show', ['product' => Product::findOrFail($id)]);
     }
 
-    /**
-     * @param $idShop
-     * @return \Illuminate\Contracts\View\Factory|View
-     */
-    public function showAllShop(int $idShop)
+    public function comparator(int $product_id_1, int $product_id_2)
     {
-        return view('product.all', ['products' => Product::where('shop', $idShop)]);
+        return \view('product.comparator',
+        [
+            'product1' => Product::findOrFail($product_id_1),
+            'product2' => Product::findOrFail($product_id_2)
+        ]);
     }
 
     /**

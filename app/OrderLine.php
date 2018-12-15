@@ -3,10 +3,10 @@
 namespace App;
 
 
-use Illuminate\Database\Eloquent\Model;
 use CoenJacobs\EloquentCompositePrimaryKeys\HasCompositePrimaryKey;
+use Illuminate\Database\Eloquent\Model;
 
-class Review extends Model
+class OrderLine extends Model
 {
     use HasCompositePrimaryKey;
 
@@ -15,21 +15,14 @@ class Review extends Model
      *
      * @var string
      */
-    public $table = 'review';
+    public $table = 'orderLine';
 
     /**
      * The attributes that contains the table primary key.
      *
      * @var string
      */
-    protected $primaryKey = array('customer_id', 'product_id');
-
-    /**
-     * The attributes that contains the table primary key.
-     *
-     * @var string
-     */
-    //protected $primaryKey = ['customer_id', 'product_id'];
+    protected $primaryKey = ['order_id', 'copy_id'];
 
     /**
      * Indicates if the IDs are auto-incrementing.
@@ -58,17 +51,18 @@ class Review extends Model
      * @var array
      */
     protected $casts = [
-        "review_mark" => "integer"
+        "orderline_quantity" => "integer",
+        "orderline_final_unit_price" => "float"
     ];
 
     /**
-     * Get the user who wrote the review
+     * Get the order from the order line
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function customer()
-    {
-        return $this->hasOne('App\Customer', 'customer_id', 'user_id');
+    public function order() {
+        return $this->hasOne('App\Order', 'order_id', 'order_id');
     }
+
 
 }
