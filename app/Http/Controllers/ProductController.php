@@ -21,7 +21,7 @@ class ProductController extends Controller
 
     public function comparator(int $product_id_1, int $product_id_2)
     {
-        return \view('product.comparator',
+        return view('product.comparator',
         [
             'product1' => Product::findOrFail($product_id_1),
             'product2' => Product::findOrFail($product_id_2)
