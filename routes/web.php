@@ -23,7 +23,7 @@ Route::get('/product/{id}', 'ProductController@show')->where('id', '[0-9]+');
 /**
  * Lead to the shop page with the shop_siret
  */
-Route::get('/shop/{id}', 'ShopController@show')->where('id', '[0-9]+');
+Route::get('/shop/{id}', 'ShopController@show')->where('id', '[0-9]+')->name("shop");
 /**
  * Lead to the category page with the category_id
  */

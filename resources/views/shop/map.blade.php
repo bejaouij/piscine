@@ -19,6 +19,9 @@
 <div id="map">
 
 </div>
+<div id="shop">
+
+</div>
 
 <script>
 
@@ -40,7 +43,18 @@
 
     }).then(function (json) {
 
-        layer = L.geoJSON(json);
+        layer = L.geoJSON(json, {
+            onEachFeature : function (feature, layer) {
+                L.DomEvent.on(layer, 'click', function() {
+                    fetch("{{ route('shop', ['id' => ""]) }}/" + feature.properties.siret).then(function (response) {
+                        return response.text();
+                    }).then(function (text) {
+                        document.querySelector('#shop').innerHTML = text;
+                    })
+                });
+                layer.bindTooltip(feature.properties.name);
+            }
+        });
         layer.addTo(map);
         map.fitBounds(layer.getBounds());
 

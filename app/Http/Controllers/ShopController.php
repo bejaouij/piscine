@@ -44,6 +44,8 @@ class ShopController extends Controller
             $content .= ', ';
             $content .= $shop->shop_position_x;
             $content .= ']}, "properties": {"name": "';
+            $content .= $shop->shop_name;
+            $content .= '", "siret":"';
             $content .= $shop->shop_siret;
             $content .= '"} },';
         }
