@@ -41,6 +41,16 @@ Route::get('/basket', 'CartController@show');
  */
 
 /**
+ * Lead to a map with all reviews
+ */
+Route::get('/map', 'ShopController@map');
+
+/**
+ * Lead to geojson of shops
+ */
+Route::post('/map', 'ShopController@geojsonShops')->name('map');
+
+/**
  * Lead to a review (for testing purpose)
  */
 Route::get('/review/{customerId}/{productId}', 'ReviewController@show')->where('customerId', '[0-9]+')->where('productId', '[0-9]+');

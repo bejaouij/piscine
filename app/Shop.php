@@ -56,8 +56,8 @@ class Shop extends Model
      * @var array
      */
     protected $casts = [
-        "shop_position_y" => "float",
-        "shop_position_x" => "float",
+        //"shop_position_y" => "float",
+        //"shop_position_x" => "float",
         "shop_is_delivery_possible" => "boolean"
     ];
 
