@@ -4,6 +4,7 @@ namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\App;
 
 class Order extends Model
 {
@@ -57,10 +58,52 @@ class Order extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function orderLines() {
+    public function orderLines()
+    {
         return $this->hasMany('App\OrderLine', "order_id", "order_id");
     }
 
+    /**
+     * Get the address from the order (not necessarily the user address)
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function address()
+    {
+        return $this->hasOne('App\Address', 'address_id', 'address_id');
+    }
+
+    /**
+     * Get the customer from the order
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function customer()
+    {
+        return $this->hasOne('App\Customer', 'user_id', 'customer_id');
+    }
+
+    /**
+     * Get the shop from the order
+     *
+     * Search the shop in the product from the copy from one orderline from the order
+     *
+     * @return \App\Shop
+     */
+    public function getShop()
+    {
+
+        $orderLine = $this->orderLines->first();
+
+        $copy = $orderLine->copy;
+
+        $product = $copy->product;
+
+        $shop = $product->shop;
+
+        return $shop;
+
+    }
 
 
 }

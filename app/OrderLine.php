@@ -60,9 +60,19 @@ class OrderLine extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function order() {
+    public function order()
+    {
         return $this->hasOne('App\Order', 'order_id', 'order_id');
     }
 
+    /**
+     * Get the copy form the OrderLine
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function copy()
+    {
+        return $this->hasOne('App\Copy', 'copy_id', 'copy_id');
+    }
 
 }
