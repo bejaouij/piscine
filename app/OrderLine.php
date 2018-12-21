@@ -20,7 +20,7 @@ class OrderLine extends Model
     /**
      * The attributes that contains the table primary key.
      *
-     * @var string
+     * @var array
      */
     protected $primaryKey = ['order_id', 'copy_id'];
 

@@ -20,16 +20,9 @@ class Review extends Model
     /**
      * The attributes that contains the table primary key.
      *
-     * @var string
+     * @var array
      */
     protected $primaryKey = array('customer_id', 'product_id');
-
-    /**
-     * The attributes that contains the table primary key.
-     *
-     * @var string
-     */
-    //protected $primaryKey = ['customer_id', 'product_id'];
 
     /**
      * Indicates if the IDs are auto-incrementing.

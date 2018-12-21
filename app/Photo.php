@@ -36,10 +36,4 @@ class Photo extends Model
      */
     protected $fillable = [''];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-
 }

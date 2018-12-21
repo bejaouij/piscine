@@ -81,4 +81,14 @@ class Shop extends Model
         return $this->hasMany('App\Product', 'shop_siret', 'shop_siret');
     }
 
+    /**
+     * Get the Users who are leading the shop
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function leaders()
+    {
+        return $this->belongsToMany('App\User', 'leading', 'shop_siret', 'user_id');
+    }
+
 }

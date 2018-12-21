@@ -21,7 +21,7 @@ class Cart extends Model
     /**
      * The attributes that contains the table primary key.
      *
-     * @var string
+     * @var array
      */
     protected $primaryKey = ['copy_id', 'customer_id'];
 
