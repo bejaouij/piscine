@@ -54,3 +54,8 @@ Route::post('/map', 'ShopController@geojsonShops')->name('map');
  * Lead to a review (for testing purpose)
  */
 Route::get('/review/{customerId}/{productId}', 'ReviewController@show')->where('customerId', '[0-9]+')->where('productId', '[0-9]+');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'Auth\ProfileController@index')->name('profile_form');
+Route::post('/profile', 'Auth\ProfileController@update')->name('profile_update');

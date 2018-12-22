@@ -11,12 +11,30 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * The attributes that contains the table name.
+     *
+     * @var string
+     */
+    protected $table = 'user';
+
+    /**
+     * The attributes that contains the table primary key.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'user_id';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'user_firstname',
+        'user_lastname',
+        'email',
+        'password',
+        'user_phone_number',
     ];
 
     /**
