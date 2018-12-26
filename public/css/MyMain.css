@@ -1,0 +1,25 @@
+.styleSearchBar {
+	position: relative;
+	left: 25%;
+	right : 25%;
+	width : 50%;
+
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+footer {
+	position: sticky;
+}
+
+.btn-flat {
+	text-align: center;
+}
