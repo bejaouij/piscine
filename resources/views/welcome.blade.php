@@ -1,7 +1,7 @@
     <head>
         <title>Laravel</title>
         
-        <link rel="stylesheet" type="text/css" href="{{asset('materialize/css/materialize.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('materialize/css/materialize.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('css/MyMain.css')}}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -17,7 +17,7 @@
                     </ul>
                 </div>
             </nav>
-            
+        
             <div class="row"></div>
 
             <nav class="styleSearchBar z-depth-1">
@@ -34,13 +34,44 @@
 
 
         </header>
-        <main> 
+        <main>
+
+            
+
+            <ul id="slide-out" class="sidenav sidenav-fixed">
+                <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                <li><a href="#!">Second Link</a></li>
+                <li><div class="divider"></div></li>
+                <li><a class="subheader">Subheader</a></li>
+                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            </ul>
+            
+
+
             <div class="row"></div>
             <div class="row"></div>
             <div class="center">
                 <a class="waves-effect waves-light btn z-depth-3">Trouve ton commerçant</a>    
             </div>
             
+            <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script> 
+                $(document).ready(function(){
+                    $('.sidenav').sidenav();
+                });
+        
+                $(document).ready(function(){
+                    $('.carousel').carousel();
+                });
+            </script>
+
+            <div class="carousel">
+                <a class="carousel-item" href="#one!"><img src=chaussure.jpg></a>
+                <a class="carousel-item" href="#two!"><img src=pain.jpg></a>
+                <a class="carousel-item" href="#three!"><img src=pain.jpg></a>
+                <a class="carousel-item" href="#four!"><img src=pain.jpg></a>
+                <a class="carousel-item" href="#five!"><img src=pain.jpg></a>
+            </div>
 
         </main>
         <footer class="page-footer ">
