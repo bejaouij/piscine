@@ -19,7 +19,7 @@ Route::get('/', function () {
 /**
  * Lead to the product page with the product_id
  */
-Route::get('/product/{id}', 'ProductController@show')->where('id', '[0-9]+');
+Route::get('/product/{id}', 'ProductController@show');
 /**
  * Lead to the shop page with the shop_siret
  */

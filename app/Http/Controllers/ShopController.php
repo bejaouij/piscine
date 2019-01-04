@@ -14,7 +14,7 @@ class ShopController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\View\Factory|View
      */
-    public function show(int $id)
+    public function show($id)
     {
         return view('shop.show', ['shop' => Shop::findOrFail($id)]);
     }
