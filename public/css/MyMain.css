@@ -28,3 +28,12 @@ footer {
 .btn-flat {
 	text-align: center;
 }
+
+#shop-maps {
+  height: 340px;
+}
+
+div.gm-style-iw div.content h1 {
+  font-size: xx-large;
+  margin-bottom: 5px;
+}
