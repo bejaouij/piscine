@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Shop;
+use App\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -33,6 +34,6 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function welcome() {
-        return view('welcome', ['shops' => Shop::all()]);
+        return view('welcome', ['shops' => Shop::all(), 'bestSellers' => Product::getBestSellers()]);
     }
 }

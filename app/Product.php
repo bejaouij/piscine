@@ -3,6 +3,7 @@
 namespace App;
 
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -55,6 +56,15 @@ class Product extends Model
      */
     static function like($attribute, $value) {
         return self::where($attribute, 'ILIKE', '%' . $value . '%')->get();
+    }
+
+    /**
+     * Get the 5 best sellers product.
+     *
+     * @return [App\Product]
+     */
+    static function getBestSellers() {
+        return self::limit(5)->get();
     }
 
     /**

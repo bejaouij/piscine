@@ -41,11 +41,9 @@
     </script>
 
     <div class="carousel">
-        <a class="carousel-item" href="#one!"><img src=chaussure.jpg></a>
-        <a class="carousel-item" href="#two!"><img src=pain.jpg></a>
-        <a class="carousel-item" href="#three!"><img src=pain.jpg></a>
-        <a class="carousel-item" href="#four!"><img src=pain.jpg></a>
-        <a class="carousel-item" href="#five!"><img src=pain.jpg></a>
+        @foreach($bestSellers as $bestSeller)
+            <a class="carousel-item" href="{{ route('product', ['id' => $bestSeller->product_id]) }}"><img alt="carousel product image" src="{{ asset('media') . '/' . $bestSeller->photo_path->photo_relative_path }}"></a>
+        @endforeach
     </div>
 
     <div id="shop-map-container" class="modal">
