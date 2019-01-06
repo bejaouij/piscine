@@ -16,7 +16,11 @@ Route::get('/', 'HomeController@welcome')->name('welcome');
 /**
  * Lead to the product page with the product_id
  */
-Route::get('/product/{id}', 'ProductController@show');
+Route::get('/product/{id}', 'ProductController@show')->name('product');
+/**
+ * Lead to the products list related to the search keywords
+ */
+Route::post('/product', 'ProductController@showByKeywords')->name('product-search-keywords');
 /**
  * Lead to the shop page with the shop_siret
  */

@@ -48,6 +48,16 @@ class Product extends Model
     ];
 
     /**
+     * Get products filtered by a like statement.
+     *
+     * @params: String
+     * @return: App\Product
+     */
+    static function like($attribute, $value) {
+        return self::where($attribute, 'ILIKE', '%' . $value . '%')->get();
+    }
+
+    /**
      * Get the price with the discount
      *
      * @return int

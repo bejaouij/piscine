@@ -19,26 +19,25 @@
         <nav>
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo center z-depth-1">E-COMMERCE DE L'HERAULT</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a class="waves-effect waves-light btn z-depth-3">M'inscire</a></li>
-                    <li><a class="waves-effect waves-light btn z-depth-3">Connection</a></li>
-                </ul>
+                @guest
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a class="waves-effect waves-light btn z-depth-3" href="{{ route('register') }}">M'inscire</a></li>
+                        <li><a class="waves-effect waves-light btn z-depth-3" href="{{ route('login') }}">Connection</a></li>
+                    </ul>
+                @else
+                    <ul class="right hide-on-med-and-down">
+                        <li><a class="waves-effect waves-light btn z-depth-3" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Se déconnecter</a></li>
+                        <li><a class="waves-effect waves-light btn z-depth-3" href="{{ route('profile_form') }}">{{ __('Profile') }}</a></li>
+                    </ul>
+
+                    <form style="display: none" id="logout-form" method="POST" action="{{ route('logout') }}">
+                        @csrf
+                    </form>
+                @endguest
             </div>
         </nav>
 
         <div class="row"></div>
-
-        <nav class="styleSearchBar z-depth-1">
-            <div class="nav-wrapper z-depth-3">
-                <form>
-                    <div class="input-field">
-                        <input id="search" type="search" required>
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>
-                    </div>
-                </form>
-            </div>
-        </nav>
 
         <main>
             @yield('content')

@@ -1,9 +1,4 @@
-{{-- @extends('layout.app') --}}
-
+@extends('layouts.app')
 @section('content')
-
-    {{-- Affichage d'une liste de produits associée à un magasin --}}
-
+    @dump($products)
 @endsection
-
-

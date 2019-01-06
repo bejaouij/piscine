@@ -8,8 +8,22 @@
         <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
     </ul>
 
+    <div class="row">
+        <nav class="styleSearchBar z-depth-1">
+            <div class="nav-wrapper z-depth-3">
+                <form method="POST" action="{{ route('product-search-keywords') }}">
+                    @csrf
+                    <div class="input-field">
+                        <input name="keywords" id="search" type="search" placeholder="Ordinateur, chaussures, fruits..." required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
     <div class="row"></div>
-    <div class="row"></div>
+
     <div class="center">
         <a class="waves-effect waves-light btn modal-trigger z-depth-3" href="#shop-map-container">Trouve ton commerçant</a>
     </div>

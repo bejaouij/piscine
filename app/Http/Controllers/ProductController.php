@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -17,6 +18,16 @@ class ProductController extends Controller
     public function show(int $id)
     {
         return view('product.show', ['product' => Product::findOrFail($id)]);
+    }
+
+    /**
+     * Return a page with all keyword related products.
+     *
+     * @param String, Illuminate\Http\Request
+     * @return \Illuminate\Contracts\View\Factory|View
+     */
+    public function showByKeywords(Request $request) {
+        return view('product.list', ['products' => Product::like('product_name', $request->keywords)]);
     }
 
     public function comparator(int $product_id_1, int $product_id_2)
