@@ -131,9 +131,19 @@
                     infowindow.open(shopMaps, element);
                 });
 
+                var $shopForm = document.createElement("form");
+                $shopForm.id = "shop-form-" + index;
+                $shopForm.method = "GET";
+                $shopForm.action = "shop/" + shopsData[index].siret;
+
+                document.querySelector("body").append($shopForm);
+
                 element.addListener("click", function() {
-                    console.log('test');
+                    document.getElementById("shop-form-" + index).submit();
                 });
+
+
+                // $(element).wrap("<div id='test'></div>")
             });
         }
 
