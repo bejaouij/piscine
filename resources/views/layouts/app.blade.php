@@ -18,7 +18,7 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo center z-depth-1">E-COMMERCE DE L'HERAULT</a>
+                <a href="{{ route('welcome') }}" class="brand-logo center z-depth-1">E-COMMERCE DE L'HERAULT</a>
                 @guest
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a class="waves-effect waves-light btn z-depth-3" href="{{ route('register') }}">M'inscire</a></li>
