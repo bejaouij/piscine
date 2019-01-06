@@ -46,10 +46,10 @@
         <footer class="page-footer ">
             <div class="container">
                 <div class="row">
-                    <div class="col waves-effect waves-light s3 btn-flat">Contact</div>
-                    <div class="col waves-effect waves-light s3 btn-flat">A propos de nous</div>
-                    <div class="col waves-effect waves-light s3 btn-flat">Information livraison</div>
-                    <div class="col waves-effect waves-light s3 btn-flat">Information paiement</div>
+                    <div class="col waves-effect waves-light s3 btn-flat"><a href="contact">Contact</a></div>
+                    <div class="col waves-effect waves-light s3 btn-flat"><a href="about">A propos de nous</a></div>
+                    <div class="col waves-effect waves-light s3 btn-flat"><a href="shipping-information">Information livraison</a></div>
+                    <div class="col waves-effect waves-light s3 btn-flat"><a href="payment-information">Information paiement</a></div>
                 </div>
             </div>
         </footer>

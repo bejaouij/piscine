@@ -14,6 +14,25 @@
 Route::get('/', 'HomeController@welcome')->name('welcome');
 
 /**
+ * Static page routes.
+ */
+Route::get('/contact', function() {
+    return view('pages.contact');
+});
+
+Route::get('/about', function() {
+    return view('pages.about');
+})
+
+;Route::get('/shipping-information', function() {
+    return view('pages.shipping-information');
+});
+
+Route::get('/payment-information', function() {
+    return view('pages.payment-information');
+});
+
+/**
  * Lead to the product page with the product_id
  */
 Route::get('/product/{id}', 'ProductController@show')->name('product');
