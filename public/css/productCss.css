@@ -1,0 +1,19 @@
+.product {
+    width:100%;
+    display: flex;
+    margin:10px;
+    flex-wrap: wrap;
+}
+
+.product_img {
+    width: 50%;
+    min-width:300px;
+}
+
+.product_info {
+    width: 50%;
+}
+
+.product_description {
+    margin:10px;
+}

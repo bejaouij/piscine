@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('materialize/css/materialize.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/MyMain.css')}}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    @yield('head')
 </head>
 
 <body>

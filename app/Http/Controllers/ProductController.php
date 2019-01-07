@@ -89,6 +89,18 @@ class ProductController extends Controller
 
     }
 
+    /**
+     * Get a list of product from the category indentified by id
+     *
+     * @param int $id
+     * @return View
+     */
+    public function compareList(int $id)
+    {
+        $products = Product::where('category_id', $id)->get();
+        return view('product.list', ["products" => $products]);
+    }
+
     public function add(Request $request, $id) {
         $validatedData = $request->validate([
             'product_name' => 'required|string|max:50',
