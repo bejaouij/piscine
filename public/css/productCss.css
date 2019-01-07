@@ -6,14 +6,19 @@
 }
 
 .product_img {
-    width: 50%;
+    width: 45%;
     min-width:300px;
 }
 
 .product_info {
-    width: 50%;
+    /width: 45%;
+    padding:15px;
 }
 
 .product_description {
     margin:10px;
+}
+
+.product_img img {
+    width: 100%;
 }

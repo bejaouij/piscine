@@ -1,34 +1,3 @@
-{{-- Test --}}
-<!--
-        <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Produit : {{ $product->product_name }}</title>
-</head>
-<body>
-{{ dump($product) }}
-        <br>
-{{ $product->product_id }}
-        <br>
-{{ $product->product_name }}
-        <br>
-{{ $product->getDiscountedPrice() }}
-        <br>
-{{ $product->shop->shop_name }}
-        <br>
-{{ $product->category->category_name }}
-        <br>
-{{ $product->photo_path->photo_relative_path  }}
-        <br>
-{{ dump($product->copies) }}
-        <br>
-{{ dump($product->reviews) }}
-        </body>
-        </html>
--->
-
 @extends('layouts.app')
 
 @section('head')
@@ -38,7 +7,9 @@
 @section('content')
 
     <div class="product">
-        <img class="product_img materialboxed" src="{{ asset($product->photo_path->photo_relative_path) }}">
+        <div class="product_img">
+            <img class="materialboxed" src="{{ asset("media/" . $product->photo_path->photo_relative_path) }}">
+        </div>
         <div class="product_info">
             <a href="{{ route("category", ["id" => $product->category_id]) }}"><h6
                         class="product_category">{{ $product->category->category_name }}</h6></a>
@@ -49,7 +20,7 @@
             <a class="waves-effect waves-light btn z-depth-3">AJOUTER AU PANIER</a>
 
             <h6 class="item5">Quantité :</h6>
-            <input type="number" class="item6" name="quantity" min="1" value="1">
+            <input style="width: 100px;" type="number" class="item6" name="quantity" min="1" value="1">
             <div class="item7 ">
                 <a class="waves-effect waves-light btn z-depth-3">COMMANDER</a>
             </div>
@@ -71,7 +42,7 @@
             var elem = document.querySelector('#modal_compare');
             instance = M.Modal.init(elem);
 
-            fetch("{{ route('compare_list', ["id" => $product->category_id ]) }}", {
+            fetch("{{ route('compare_list', ["id" => $product->product_id ]) }}", {
                 method : "POST"
             }).then( function (response) {
                 return response.text()
@@ -88,8 +59,7 @@
 
     <div id="modal_compare" class="modal">
         <div class="modal-content">
-            <h4>Modal Header</h4>
-
+            <h4>Choisir le produit à comparer</h4>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Annuler</a>

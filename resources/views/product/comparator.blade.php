@@ -14,8 +14,8 @@
         <tbody>
         <tr>
             <th>Image</th>
-            <td><img src="{{ asset($product1->photo_path->photo_relative_path) }}"></td>
-            <td><img src="{{ asset($product2->photo_path->photo_relative_path) }}"></td>
+            <td><img style="width: 200px;" src="{{ asset("media/".$product1->photo_path->photo_relative_path) }}"></td>
+            <td><img style="width: 200px;" src="{{ asset("media/".$product2->photo_path->photo_relative_path) }}"></td>
         </tr>
         <tr>
             <th>Prix</th>

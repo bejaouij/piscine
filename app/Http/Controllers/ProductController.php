@@ -90,15 +90,18 @@ class ProductController extends Controller
     }
 
     /**
-     * Get a list of product from the category indentified by id
+     * Get a list of product from the category identified by id
      *
      * @param int $id
      * @return View
      */
     public function compareList(int $id)
     {
-        $products = Product::where('category_id', $id)->get();
-        return view('product.list', ["products" => $products]);
+        $product = Product::findOrFail($id);
+        // WhereNotIn : remove le produit selectionné pour ne pas le comparer avec lui même
+        $products = Product::where('category_id', $product->category_id)->get()->whereNotIn("product_id", $id);
+
+        return view('product.compareList', ["products" => $products, "product_id" => $product->product_id]);
     }
 
     public function add(Request $request, $id) {
