@@ -14,8 +14,8 @@
         <tbody>
         <tr>
             <th>Image</th>
-            <td><img style="width: 200px;" src="{{ asset("media/".$product1->photo_path->photo_relative_path) }}"></td>
-            <td><img style="width: 200px;" src="{{ asset("media/".$product2->photo_path->photo_relative_path) }}"></td>
+            <td><img class="materialboxed" style="width: 200px;" src="{{ asset("media/".$product1->photo_path->photo_relative_path) }}"></td>
+            <td><img class="materialboxed" style="width: 200px;" src="{{ asset("media/".$product2->photo_path->photo_relative_path) }}"></td>
         </tr>
         <tr>
             <th>Prix</th>
@@ -29,5 +29,12 @@
         </tr>
         </tbody>
     </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.materialboxed');
+            var instances = M.Materialbox.init(elems);
+        });
+    </script>
 
 @endsection
