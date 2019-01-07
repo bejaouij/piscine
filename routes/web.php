@@ -32,6 +32,10 @@ Route::get('/payment-information', function() {
     return view('pages.payment-information');
 });
 
+Route::get('/legal-notice', function() {
+    return view('pages.legal-notice');
+});
+
 /**
  * Lead to the product page with the product_id
  */

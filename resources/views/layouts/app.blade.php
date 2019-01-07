@@ -50,6 +50,7 @@
                     <a href="about"><div class="col waves-effect waves-light s3 btn-flat"><span>A propos de nous</span></div></a>
                     <a href="shipping-information"><div class="col waves-effect waves-light s3 btn-flat"><span>Information livraison</span></div></a>
                     <a href="payment-information"><div class="col waves-effect waves-light s3 btn-flat"><span>Information paiement</span></div></a>
+                    <a href="legal-notice"><div class="col waves-effect waves-light s3 btn-flat"><span>Mentions légales</span></div></a>
                 </div>
             </div>
         </footer>
