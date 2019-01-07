@@ -19,6 +19,7 @@ body {
 
   main {
     flex: 1 0 auto;
+    margin-bottom: 130px;
   }
 
 footer {
@@ -29,6 +30,7 @@ footer {
 
 footer span {
   color: white;
+  font-size: x-small;
 }
 
 .btn-flat {
