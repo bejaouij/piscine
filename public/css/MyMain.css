@@ -47,3 +47,8 @@ div.gm-style-iw div.content h1 {
 #login-form {
   margin-top: 50px;
 }
+
+.footerBody{
+  padding-left: 15%;
+  padding-right: 15%;
+}
