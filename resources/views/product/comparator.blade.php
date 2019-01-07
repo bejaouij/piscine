@@ -27,6 +27,11 @@
             <td>{{ $product1->product_description }}</td>
             <td>{{ $product2->product_description }}</td>
         </tr>
+        <tr>
+            <th></th>
+            <td><a class="waves-effect waves-light btn z-depth-3" href="{{ route('product', ["id" => $product1->product_id]) }}">Voir plus</a></td>
+            <td><a class="waves-effect waves-light btn z-depth-3" href="{{ route('product', ["id" => $product2->product_id]) }}">Voir plus</a></td>
+        </tr>
         </tbody>
     </table>
 
