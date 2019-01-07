@@ -19,8 +19,13 @@ body {
 
   main {
     flex: 1 0 auto;
-    margin-bottom: 130px;
+    margin: 0 auto 130px auto;
+    width: 90%
   }
+
+main ul.pagination {
+  text-align: center;
+}
 
 footer {
 	position: fixed;
