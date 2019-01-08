@@ -59,6 +59,7 @@ Route::get('/basket', 'CartController@show');
 
 Route::post('/compareList/{id}', 'ProductController@compareList')->where('id', '[0-9]+')->name("compare_list");
 
+Route::get('/product/category/{id}', 'ShopController@readByCategory')->name('product-category');
 Route::get('/product/comparator/{product_id_1}/{product_id_2}', 'ProductController@comparator')->where('product_id_1', '[0-9]+')->where('product_id_2', '[0-9]+')->name("comparator");
 Route::get('/category/{id}', 'CategoryController@show')->where('id', '[0-9]+');
 

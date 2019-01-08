@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Shop;
 use App\Leading;
 use App\Address;
+use App\Product;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -84,4 +85,7 @@ class ShopController extends Controller
         return redirect()->back();
     }
 
+    public function readByCategory($id) {
+        return view('product.list', ['products' => Product::where('category_id', $id)->get()]);
+    }
 }
