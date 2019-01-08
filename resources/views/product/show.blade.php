@@ -22,11 +22,14 @@
                     <option value="{{ $copy->copy_id }}">{{ $copy->copy_name }}</option>
                 @endforeach
             </select>
-            <a id="add" class="waves-effect waves-light btn z-depth-3" href="{{ route("car-add", ["id"=> $product->copies->first()->copy_id , "quantity" => "1"]) }}">AJOUTER
+            <a id="add" class="waves-effect waves-light btn z-depth-3" onclick="event.preventDefault(); document.getElementById('add-cart-product').submit();">AJOUTER
                 AU PANIER</a>
 
-            <h6 class="item5">Quantité :</h6>
-            <input style="width: 100px;" type="number" class="item6" name="quantity" min="1" value="1" id="qtt">
+            <form id="add-cart-product" action="{{ route("car-add", ["id" => $product->copies->first()->copy_id]) }}">
+                <h6 class="item5">Quantité :</h6>
+                <input style="width: 100px;" type="number" class="item6" name="cart_quantity" min="1" value="1" id="qtt">
+            </form>
+
             <div class="item7 ">
                 <a class="waves-effect waves-light btn z-depth-3">COMMANDER</a>
             </div>
