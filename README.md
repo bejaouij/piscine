@@ -17,6 +17,10 @@ Le déploiement de l'application nécessite les outils suivants :
 
 * Initialisation du projet
 
+###
+
+* DÃ©ploiement de l'application
+
 ## Auteurs
 
 * [Tanguy Thomas](https://github.com/MFrizzy) - *Chef de projet | Développeur | Administrateur de la base de données*
