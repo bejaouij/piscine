@@ -89,9 +89,7 @@ class CartController extends Controller
         }
         $basket->save();
 
-        dump($basket);
-
-        //return redirect()->back();
+        return redirect()->back();
     }
 
 }
