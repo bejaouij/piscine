@@ -81,21 +81,33 @@
 
         <hr>
 
+        {{--@if($errors->any())--}}
+            {{--{{ dd($errors) }}--}}
+        {{--@endif--}}
+
+
         <div class="row">
-            <form class="col s12">
+            <form id="add-product-form" name="add-product-form" method="POST" action="{{ route('product-create', ['id' => $shop->shop_siret]) }}" class="col s12">
+                @csrf
+
                 <div class="input-field col s6">
-                    <label for="product_name">Reference du Produit</label>
+                    <label for="product_name">Nom du produit*</label>
                     <input id="product_name" name="product_name" type="text" class="validate">
                 </div>
 
                 <div class="input-field col s6">
-                    <input id="nom" type="text" class="validate">
-                    <label for="nom">Nom du Produit</label>
+                    <label for="product_booking_duration">Temps de réservation (en heures)</label>
+                    <input id="product_booking_duration" name="product_booking_duration" type="text" class="validate">
                 </div>
 
                 <div class="input-field col s6">
-                    <input id="prix" type="number" class="validate">
-                    <label for="prix">Prix du Produit</label>
+                    <label for="product_price">Prix TTC*</label>
+                    <input id="product_price" name="product_price" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s6">
+                    <label for="product_discount_percentage">Réduction</label>
+                    <input id="product_discount_percentage" name="product_discount_percentage" type="text" class="validate">
                 </div>
 
                 <div class="row col s12">

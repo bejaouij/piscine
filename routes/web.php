@@ -86,3 +86,5 @@ Route::post('/profile', 'Auth\ProfileController@update')->name('profile_update')
 
 Route::get('/my-shop/{id}', 'HomeController@shop')->name('my-shop');
 Route::get('/my-shops', 'HomeController@shops')->name('my-shops');
+
+Route::post('/product/create/shop/{id}', 'ProductController@add')->name('product-create');

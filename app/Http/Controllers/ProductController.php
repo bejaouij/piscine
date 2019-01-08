@@ -66,6 +66,7 @@ class ProductController extends Controller
      */
     public function create()
     {
+
         return view('product.update', ['action' => 'create']);
     }
 
@@ -88,4 +89,28 @@ class ProductController extends Controller
 
     }
 
+    public function add(Request $request, $id) {
+        $validatedData = $request->validate([
+            'product_name' => 'required|string|max:50',
+            'product_booking_duration' => 'integer',
+            'product_price' => 'required',
+            'product_discount_percentage' => 'min:0|max:100',
+            'category_id' => 'required|integer',
+        ]);
+
+        // TODO
+        // Vérifier l'existence de la catégorie et du magasin.
+        // Vérifier le type des champs.
+
+        $newProduct = new Product();
+        $newProduct->product_name = $request->product_name;
+        $newProduct->product_booking_duration = $request->product_booking_duration;
+        $newProduct->product_price = $request->product_price;
+        $newProduct->product_discount_percentage = number_format(($request->product_discount_percentage / 100), '2', '.', '');
+        $newProduct->category_id = $request->category_id;
+        $newProduct->shop_siret = $id;
+        $newProduct->save();
+
+        return redirect()->back();
+    }
 }
