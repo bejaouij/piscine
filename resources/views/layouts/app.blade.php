@@ -26,6 +26,9 @@
                     </ul>
                 @else
                     <ul class="right hide-on-med-and-down">
+                        @if(is_null(Auth::user()->customer))
+                            <li><a class="waves-effect waves-light btn z-depth-3" href="{{ route('my-shops') }}">Mes magasins</a></li>
+                        @endif
                         <li><a class="waves-effect waves-light btn z-depth-3" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Se déconnecter</a></li>
                         <li><a class="waves-effect waves-light btn z-depth-3" href="{{ route('profile_form') }}">{{ __('Profile') }}</a></li>
                     </ul>

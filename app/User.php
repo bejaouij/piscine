@@ -45,4 +45,22 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Retrieve the related customer
+     *
+     * @return: App\Customer?
+     */
+    public function customer() {
+        return $this->belongsTo('App\Customer', 'user_id', 'user_id');
+    }
+
+    /**
+     * Retrieve the related shops
+     *
+     * @return: [App\Shop]?
+     */
+    public function shops() {
+        return $this->belongsToMany('App\Shop', 'leading', 'user_id', 'shop_siret');
+    }
 }

@@ -36,4 +36,13 @@ class HomeController extends Controller
     public function welcome() {
         return view('welcome', ['shops' => Shop::all(), 'bestSellers' => Product::getBestSellers()]);
     }
+
+    /**
+     * Show the current user shops.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function shops() {
+        return view('shop.my-shops');
+    }
 }
