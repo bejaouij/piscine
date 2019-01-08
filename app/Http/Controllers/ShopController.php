@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Shop;
+use App\Leading;
+use App\Address;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
@@ -53,6 +57,31 @@ class ShopController extends Controller
         $content = substr($content, 0, -1);
 
         echo $content . ']}';
+    }
+
+    public function create(Request $request) {
+        $newAddress = new Address();
+        $newAddress->address_street_number = $request->address_street_number;
+        $newAddress->address_street = $request->address_street;
+        $newAddress->address_city = $request->address_city;
+        $newAddress->address_postal_code = $request->address_postal_code;
+        $newAddress->save();
+
+        $newShop = new Shop();
+        $newShop->shop_siret = $request->shop_siret;
+        $newShop->shop_name = $request->shop_name;
+        $newShop->shop_contact_mail = $request->shop_contact_mail;
+        $newShop->shop_phone = $request->shop_phone;
+        $newShop->shop_is_delivery_possible = ($request->shop_is_delivery_possible == '0') ? false : true;
+        $newShop->address_id = $newAddress->address_id;
+        $newShop->save();
+
+        $newLeading = new Leading();
+        $newLeading->shop_siret = $newShop->shop_siret;
+        $newLeading->user_id = Auth::user()->user_id;
+        $newLeading->save();
+
+        return redirect()->back();
     }
 
 }

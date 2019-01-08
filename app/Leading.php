@@ -13,6 +13,8 @@ class Leading extends Model
      */
     protected $table = 'leading';
 
+    protected $primaryKey = 'user_id';
+
     /**
      * The attributes that informs whether the table contains timestamp fields.
      *
