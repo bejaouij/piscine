@@ -59,3 +59,20 @@ div.gm-style-iw div.content h1 {
   padding-left: 15%;
   padding-right: 15%;
 }
+
+.initial-price {
+  color: darkgrey;
+  text-decoration: line-through;
+  font-size: small;
+}
+
+.discount-percentage {
+  color: red;
+  font-size: large;
+  border: solid 1px red;
+  background-color: white;
+}
+
+a.waves-effect.waves-light.btn {
+  z-index: auto;
+}
