@@ -80,7 +80,7 @@ class Product extends Model
      */
     public function getDiscountedPrice()
     {
-        return $this->product_price - $this->product_price * ($this->product_discount_percentage / 100);
+        return $this->product_price - $this->product_price * ($this->product_discount_percentage);
     }
 
     /**
