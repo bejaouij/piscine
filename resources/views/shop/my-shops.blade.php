@@ -16,7 +16,7 @@
                                 <p>{{ $shop->shop_name }} | {{ $shop->shop_siret }}</p>
 
                                 <p>
-                                    <a class="waves-effect waves-light btn" href="#">Voir</a>
+                                    <a class="waves-effect waves-light btn" href="{{ route('my-shop', ['id' => $shop->shop_siret]) }}">Voir</a>
                                 </p>
                             </div>
                         </div>

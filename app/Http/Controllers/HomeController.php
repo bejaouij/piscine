@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Shop;
+use App\Leading;
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -35,6 +38,20 @@ class HomeController extends Controller
      */
     public function welcome() {
         return view('welcome', ['shops' => Shop::all(), 'bestSellers' => Product::getBestSellers()]);
+    }
+
+    /**
+     * Show the specified user shop.
+     *
+     * @param: String
+     * @return \Illuminate\Http\Response
+     */
+    public function shop($id) {;
+
+        if(Leading::where('shop_siret', $id)->firstOrFail()->user_id === Auth::user()->user_id)
+            return view('shop.my-shop', ['shop' => Shop::findOrFail($id), 'categories' => Category::all()]);
+
+        abort(404);
     }
 
     /**
