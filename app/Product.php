@@ -83,6 +83,12 @@ class Product extends Model
         return $this->product_price - $this->product_price * ($this->product_discount_percentage);
     }
 
+    public function getDiscountValue() {
+        if(!is_null($this->product_discount_percentage))
+            return $this->product_price * $this->product_discount_percentage;
+        return 0;
+    }
+
     /**
      * Get the shop that owns the product
      *
