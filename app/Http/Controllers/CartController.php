@@ -70,14 +70,14 @@ class CartController extends Controller
         return redirect()->route('cart-index');
     }
 
-    public function add(Request $request, $id)
+    public function add(Request $request)
     {
-        $basket = Cart::where('customer_id', Auth::user()->user_id)->where('copy_id', $id)->first();
+        $basket = Cart::where('customer_id', Auth::user()->user_id)->where('copy_id', $request->copy_id)->first();
         if (isset($basket)) {
             $basket->cart_quantity += $request->cart_quantity;
         } else {
             $basket = new Cart();
-            $basket->copy_id = $id;
+            $basket->copy_id = $request->copy_id;
             $basket->customer_id = Auth::user()->user_id;
             $basket->cart_quantity = $request->cart_quantity;
         }
