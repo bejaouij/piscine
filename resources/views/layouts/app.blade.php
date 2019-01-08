@@ -19,7 +19,7 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <img height="100%" display="absolute" src="logoCCI2.png">
+                <img height="100%" display="absolute" src="{{ asset('logoCCI2.png') }}">
                 <a href="{{ route('welcome') }}" class="brand-logo center z-depth-1">E-COMMERCE DE L'HERAULT</a>
                 @guest
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -30,6 +30,8 @@
                     <ul class="right hide-on-med-and-down">
                         @if(is_null(Auth::user()->customer))
                             <li><a class="waves-effect waves-light btn z-depth-3" href="{{ route('my-shops') }}">Mes magasins</a></li>
+                        @else
+                            <li><a class="waves-effect waves-light btn z-depth-3" href="{{ route('cart-index') }}">Mon panier</a></li>
                         @endif
                         <li><a class="waves-effect waves-light btn z-depth-3" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Se déconnecter</a></li>
                         <li><a class="waves-effect waves-light btn z-depth-3" href="{{ route('profile_form') }}">{{ __('Profile') }}</a></li>
