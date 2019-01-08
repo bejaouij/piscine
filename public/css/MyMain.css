@@ -71,6 +71,7 @@ div.gm-style-iw div.content h1 {
   font-size: large;
   border: solid 1px red;
   background-color: white;
+  padding: 5px;
 }
 
 a.waves-effect.waves-light.btn {
