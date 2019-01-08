@@ -18,6 +18,7 @@
     <header>
         <nav>
             <div class="nav-wrapper">
+                <img height="100%" display="absolute" src="logoCCI2.png">
                 <a href="{{ route('welcome') }}" class="brand-logo center z-depth-1">E-COMMERCE DE L'HERAULT</a>
                 @guest
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
