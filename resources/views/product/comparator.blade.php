@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <table class="highlight">
+    <table class="">
         <thead>
         <tr>
             <th>Nom</th>
@@ -12,6 +12,11 @@
         </thead>
 
         <tbody>
+        <tr>
+            <th>Magasin</th>
+            <td><a href="{{ route("shop", ['id' => $product1->shop_siret]) }}">{{ $product1->shop->shop_name }}</a></td>
+            <td><a href="{{ route("shop", ['id' => $product2->shop_siret]) }}">{{ $product2->shop->shop_name }}</a></td>
+        </tr>
         <tr>
             <th>Image</th>
             <td><img class="materialboxed" style="width: 200px;" src="{{ asset("media/".$product1->photo_path->photo_relative_path) }}"></td>

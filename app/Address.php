@@ -45,4 +45,19 @@ class Address extends Model
         "address_street_number" => "integer"
     ];
 
+    /**
+     * Génère un string de l'addresse
+     *
+     * @return String
+     */
+    public function toStringTop()
+    {
+        return $this->address_street_number . " " . $this->address_street;
+    }
+
+    public function toStringBottom()
+    {
+        return $this->address_postal_code . " " . $this->address_city;
+    }
+
 }
