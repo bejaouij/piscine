@@ -77,3 +77,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'Auth\ProfileController@index')->name('profile_form');
 Route::post('/profile', 'Auth\ProfileController@update')->name('profile_update');
 Route::post('/cart', 'CartController@index')->name('cart-index');
+
+Route::get('/my-shop/{id}', 'HomeController@shop')->name('my-shop');
+Route::get('/my-shops', 'HomeController@shops')->name('my-shops');
+
+Route::post('/product/create/shop/{id}', 'ProductController@add')->name('product-create');
