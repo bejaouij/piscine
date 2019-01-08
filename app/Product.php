@@ -120,7 +120,7 @@ class Product extends Model
      */
     public function copies()
     {
-        return $this->hasMany('App\Copy', 'product_id', 'product_id');
+        return $this->hasMany('App\Copy', 'copy_id', 'copy_id');
     }
 
     /**

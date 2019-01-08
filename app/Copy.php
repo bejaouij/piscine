@@ -52,4 +52,10 @@ class Copy extends Model
     protected $casts = [
         "copy_stock" => "integer"
     ];
+
+    public function product()
+    {
+        $this->hasOne('App\Product', "product_id", 'product_id');
+    }
+
 }

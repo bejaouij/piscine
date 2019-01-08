@@ -76,6 +76,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'Auth\ProfileController@index')->name('profile_form');
 Route::post('/profile', 'Auth\ProfileController@update')->name('profile_update');
+Route::get('/cart', 'CartController@index')->name('cart-index');
+Route::get('/cartDelete/{id}', 'CartController@delete')->name('cart-delete')->where('id', '[0-9]+');
+Route::get('/cartAdd/{id}/{quantity}', 'CartController@add')-> name('car-add')->where('id', '[0-9]+')->where('quantity', '[0-9]+');
 
 Route::get('/my-shop/{id}', 'HomeController@shop')->name('my-shop');
 Route::get('/my-shops', 'HomeController@shops')->name('my-shops');

@@ -56,6 +56,10 @@ class Cart extends Model
     ];
 
     public function copy() {
-        return Copy::find($this->copy_id);
+        return $this->hasOne('App\Copy', "copy_id", "copy_id");
+    }
+
+    public function getAllPrice() {
+        return $this->copy->product->getDiscountedPrice()*$this->cart_quantity  ;
     }
 }
